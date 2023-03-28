@@ -40,7 +40,7 @@ namespace StrategyPattern.Objects
 
         public void GetSpeed()
         {
-            Console.WriteLine($"Whatever the fuck GetSpeed is?");
+            Console.WriteLine($"Whatever GetSpeed is?");
         }
     }
 }
