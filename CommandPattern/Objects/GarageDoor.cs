@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using StrategyPattern.Objects.Lights;
 
-namespace StrategyPattern.Objects.GarageDoor
+namespace CommandPattern.Objects
 {
     public class GarageDoor
     {
         public string Name { get; set; }
-     
+
         public GarageDoor(string name)
         {
             Name = name;

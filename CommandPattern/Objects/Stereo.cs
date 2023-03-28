@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern.Objects.Stereo
+namespace CommandPattern.Objects
 {
-    public  class Stereo
+    public class Stereo
     {
         public string Name { get; set; }
 

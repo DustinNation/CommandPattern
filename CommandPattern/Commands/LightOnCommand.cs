@@ -1,5 +1,5 @@
-﻿using StrategyPattern.Interfaces;
-using StrategyPattern.Objects.Lights;
+﻿using CommandPattern.Objects;
+using StrategyPattern.Interfaces;
 
 namespace StrategyPattern.Commands;
 

@@ -1,5 +1,5 @@
-﻿using StrategyPattern.Interfaces;
-using StrategyPattern.Objects.GarageDoor;
+﻿using CommandPattern.Objects;
+using StrategyPattern.Interfaces;
 
 namespace StrategyPattern.Commands;
 

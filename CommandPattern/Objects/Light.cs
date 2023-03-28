@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern.Objects.Lights
+namespace CommandPattern.Objects
 {
     public class Light
     {
         public string Name { get; set; }
-     
+
         public Light(string name)
         {
             Name = name;

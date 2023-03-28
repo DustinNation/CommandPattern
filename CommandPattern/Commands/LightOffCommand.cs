@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommandPattern.Objects;
 using StrategyPattern.Interfaces;
-using StrategyPattern.Objects.Lights;
 
 namespace StrategyPattern.Commands
 {
