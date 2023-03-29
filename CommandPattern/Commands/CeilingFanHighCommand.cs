@@ -3,28 +3,29 @@ using StrategyPattern.Objects;
 
 namespace StrategyPattern.Commands;
 
-public class CeilingFanOffCommand : ICommand
+internal class CeilingFanHighCommand : ICommand
 {
-    private readonly CeilingFan _ceilingFan;
+    private CeilingFan _ceilingFan;
     private int _previousSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan)
+    public CeilingFanHighCommand(CeilingFan ceilingFan)
     {
         _ceilingFan = ceilingFan;
     }
 
+
     public void Execute()
     {
         _previousSpeed = _ceilingFan.GetSpeed();
-        _ceilingFan.Off();
+        _ceilingFan.High();
     }
 
     public void Undo()
     {
         switch (_previousSpeed)
         {
-            case 3:
-                _ceilingFan.High();
+            case 3: 
+                _ceilingFan.High(); 
                 break;
             case 2:
                 _ceilingFan.Medium();

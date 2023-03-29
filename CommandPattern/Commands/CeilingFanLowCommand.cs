@@ -1,14 +1,14 @@
 ﻿using StrategyPattern.Interfaces;
 using StrategyPattern.Objects;
 
-namespace StrategyPattern.Commands;
+namespace CommandPattern.Commands;
 
-public class CeilingFanOffCommand : ICommand
+public class CeilingFanLowCommand : ICommand
 {
     private readonly CeilingFan _ceilingFan;
     private int _previousSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan)
+    public CeilingFanLowCommand(CeilingFan ceilingFan)
     {
         _ceilingFan = ceilingFan;
     }
@@ -16,7 +16,7 @@ public class CeilingFanOffCommand : ICommand
     public void Execute()
     {
         _previousSpeed = _ceilingFan.GetSpeed();
-        _ceilingFan.Off();
+        _ceilingFan.Low();
     }
 
     public void Undo()

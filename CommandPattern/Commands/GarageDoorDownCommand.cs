@@ -20,5 +20,10 @@ namespace StrategyPattern.Commands
         {
             GarageDoor.Down();
         }
+
+        public void Undo()
+        {
+            GarageDoor.Up();
+        }
     }
 }

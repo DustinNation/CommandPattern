@@ -6,8 +6,9 @@ namespace StrategyPattern.Remote;
 
 public class RemoteControl
 {
-    public ICommand[] onCommands { get; set; }
-    public ICommand[] offCommands { get; set; }
+    private ICommand[] onCommands { get; set; }
+    private ICommand[] offCommands { get; set; }
+    private ICommand UndoCommand { get; set; }
 
     public RemoteControl()
     {
@@ -21,6 +22,8 @@ public class RemoteControl
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+
+        UndoCommand = noCommand;
     }
 
     public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)
@@ -32,22 +35,30 @@ public class RemoteControl
     public void OnButtonWasPushed(int slot)
     {
         onCommands[slot].Execute();
+        UndoCommand = onCommands[slot];
     }
 
     public void OffButtonWasPushed(int slot)
     {
         offCommands[slot].Execute();
+        UndoCommand = offCommands[slot];
     }
 
-    public string GenerateCommandString()
+    public void UndoButtonWasPushed()
+    {
+        UndoCommand.Undo();
+    }
+    public void GenerateCommandString()
     {
         var stringBuilder = new StringBuilder();
         stringBuilder.Append("\n---------- Remote Control ----------\n");
         for (var i = 0; i < onCommands.Length; i++)
         {
-            stringBuilder.AppendFormat("[Slot " + i + "] " + onCommands[i].GetType().Name +  "                    " + offCommands[i].GetType().Name + "\n");
+            stringBuilder.Append("[Slot " + i + "] " + onCommands[i].GetType().Name +  "      " + offCommands[i].GetType().Name + " \n");
         }
 
-        return stringBuilder.ToString();
+        stringBuilder.Append("[Undo] " + UndoCommand.GetType().Name + "\n");
+
+        Console.WriteLine(stringBuilder.ToString());
     }
 }

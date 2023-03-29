@@ -1,34 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StrategyPattern.Objects.Lights;
+﻿namespace CommandPattern.Objects;
 
-namespace CommandPattern.Objects
+public class GarageDoor
 {
-    public class GarageDoor
+    public GarageDoor(string name)
     {
-        public string Name { get; set; }
+        Name = name;
+    }
 
-        public GarageDoor(string name)
-        {
-            Name = name;
-        }
+    public string Name { get; set; }
 
-        public void Up()
-        {
-            Console.WriteLine("Garage door going up.");
-        }
+    public void Up()
+    {
+        Console.WriteLine("Garage door going up.");
+    }
 
-        public void Down()
-        {
-            Console.WriteLine("Garage door going down.");
-        }
+    public void Down()
+    {
+        Console.WriteLine("Garage door going down.");
+    }
 
-        public void Stop()
-        {
-            Console.WriteLine("Stopping garage door in it's place.");
-        }
+    public void Stop()
+    {
+        Console.WriteLine("Stopping garage door in it's place.");
     }
 }

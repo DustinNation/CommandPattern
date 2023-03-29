@@ -16,4 +16,9 @@ internal class GarageDoorUpCommand : ICommand
     {
         GarageDoor.Up();
     }
+
+    public void Undo()
+    {
+        GarageDoor.Down();
+    }
 }

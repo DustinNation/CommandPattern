@@ -8,21 +8,21 @@ namespace CommandPattern.Objects
 {
     public class Light
     {
-        public string Name { get; set; }
+        private readonly string _location;
 
-        public Light(string name)
+        public Light(string location)
         {
-            Name = name;
+            _location = location;
         }
 
         public void On()
         {
-            Console.WriteLine($"{Name} light is on.");
+            Console.WriteLine($"{_location} light is on.");
         }
 
         public void Off()
         {
-            Console.WriteLine($"{Name} light is off.");
+            Console.WriteLine($"{_location} light is off.");
         }
     }
 }

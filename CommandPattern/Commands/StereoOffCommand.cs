@@ -20,5 +20,10 @@ namespace StrategyPattern.Commands
         {
             Stereo.Off();
         }
+
+        public void Undo()
+        {
+            Stereo.On();
+        }
     }
 }

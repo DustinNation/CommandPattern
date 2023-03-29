@@ -23,5 +23,10 @@ namespace StrategyPattern.Commands
             Stereo.SetCd();
             Stereo.SetVolume(11);
         }
+
+        public void Undo()
+        {
+            Stereo.Off();
+        }
     }
 }

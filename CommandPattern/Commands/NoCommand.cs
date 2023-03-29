@@ -8,4 +8,9 @@ public class NoCommand : ICommand
     {
         Console.WriteLine("No command assigned");
     }
+
+    public void Undo()
+    {
+        Console.WriteLine("No command assigned");
+    }
 }

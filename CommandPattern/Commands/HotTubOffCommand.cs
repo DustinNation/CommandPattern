@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 using CommandPattern.Objects;
 using StrategyPattern.Interfaces;
 
-namespace StrategyPattern.Commands
+namespace CommandPattern.Commands
 {
-    internal class LightOffCommand:ICommand
+    public class HotTubOffCommand : ICommand
     {
-        public Light Light { get; set; }
+        private HotTub _hotTub;
 
-        public LightOffCommand(Light light)
+        public HotTubOffCommand(HotTub hotTub)
         {
-            Light = light;
+            _hotTub = hotTub;
         }
 
         public void Execute()
         {
-            Light.Off();
+            _hotTub.JetsOff();
         }
 
         public void Undo()
         {
-            Light.On();
+            _hotTub.JetsOn();
         }
     }
 }

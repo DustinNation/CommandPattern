@@ -16,4 +16,9 @@ internal class LightOnCommand : ICommand
     {
         Light.On();
     }
+
+    public void Undo()
+    {
+        Light.Off();
+    }
 }
